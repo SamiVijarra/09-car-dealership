@@ -22,4 +22,11 @@ export class CarsService {
       year: 2021,
     },
   ];
+  findAll() {
+    return this.cars;
+  }
+  findOne(id: number) {
+    const car = this.cars.find((car) => car.id === id);
+    return car;
+  }
 }
