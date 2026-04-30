@@ -25,7 +25,7 @@ export class CarsController {
   }
   @Post()
   createCar(@Body() createCardDto: CreateCarDto) {
-    return createCardDto;
+    return this.carsService.create(createCardDto);
   }
 
   @Patch(':id')
@@ -33,7 +33,7 @@ export class CarsController {
     @Param('id', ParseUUIDPipe) id: string,
     @Body() updateCarDto: UpdateCarDto,
   ) {
-    return updateCarDto;
+    return this.carsService.update(id, updateCarDto);
   }
   @Delete(':id')
   deleteCar(@Param('id', ParseUUIDPipe) id: string) {
