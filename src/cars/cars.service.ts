@@ -1,4 +1,8 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { Car } from './interfaces/car.interface';
 import { v4 as uuid } from 'uuid';
 import { CreateCarDto, UpdateCarDto } from './dto';
@@ -27,7 +31,7 @@ export class CarsService {
   }
   findOneById(id: string) {
     const car = this.cars.find((car) => car.id === id);
-    if (!car) throw new BadRequestException(`Car with id '${id}' not found`);
+    if (!car) throw new NotFoundException(`Car with id '${id}' not found`);
     return car;
   }
   create(createCarDto: CreateCarDto) {
