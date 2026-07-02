@@ -46,8 +46,8 @@ e inyección de dependencias.
 
 1. Clonar el repositorio
 ```bash
-git clone https://github.com/SamiVijarra/09-car-dealership.git
-cd 09-car-dealership
+git clone https://github.com/SamiVijarra/car-dealership-api.git
+cd car-dealership-api
 ```
 
 2. Instalar dependencias
@@ -61,3 +61,15 @@ npm run start:dev
 ```
 
 4. Poblar la base de datos
+GET http://localhost:3000/seed
+
+## Estructura del proyecto
+src/
+├── cars/        # Módulo de autos (controller, service, DTOs)
+├── brands/      # Módulo de marcas (controller, service, DTOs)
+├── seed/        # Módulo para poblar la base de datos
+└── main.ts      # Punto de entrada con ValidationPipe global
+
+## Autor
+
+**Samanta Vijarra** — [github.com/SamiVijarra](https://github.com/SamiVijarra)
